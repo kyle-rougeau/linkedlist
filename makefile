@@ -1,5 +1,5 @@
 .RECIPEPREFIX = >
-objects = intSLLNode.o main.o
+objects = IntSLLNode.o IntSLList.o main.o
 
 SLL : $(objects)
 > g++ -o SLL $(objects)
