@@ -1,6 +1,8 @@
 #ifndef INTSLLNODE_H
 #define INTSLLNODE_H
 
+using namespace std;
+
 class IntSLLNode {
 public:
    int info;

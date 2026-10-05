@@ -1,3 +1,4 @@
+#include <iostream>
 #include "IntSLList.h"
 
 using namespace std;
@@ -134,6 +135,39 @@ bool IntSLList::isInList(int compare) const
       searchPoint = searchPoint->next;
    }
    return false;
+}
+
+bool IntSLList::isEqualTo(IntSLList compareTo)
+{
+    IntSLLNode* tempCompare = head;
+    IntSLLNode* tempCompareTo = compareTo.getHead();
+
+    if(tempCompare->info != tempCompareTo->info)
+    {
+        return false;
+    }
+    while(tempCompare->next != NULL)
+    {
+        if(tempCompareTo->next == NULL)
+        {
+            return false;
+        }
+
+        tempCompare = tempCompare->next;
+        tempCompareTo = tempCompareTo->next;
+
+        if(tempCompare->info != tempCompareTo->info)
+        {
+            return false;
+        }
+    }
+    
+    if (tempCompareTo->next != NULL)
+    {
+        return false;
+    }
+    
+    return true;
 }
 
 void IntSLList::disp()
